@@ -1,1 +1,1 @@
-Just Download the repository, and unzip the contents into your wpilib installation folder usually found here on windows C:\Users\Public\wpilib"year"\Robotbuilder\extensions
+Just Download the repository, and unzip the contents into your wpilib installation folder usually found here on windows C:\Users\Public\wpilib\"year"\Robotbuilder\extensions
