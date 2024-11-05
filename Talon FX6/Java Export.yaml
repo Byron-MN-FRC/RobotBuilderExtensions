@@ -1,0 +1,5 @@
+Talon FX6:
+  Defaults: "CustomComponent,None"
+  ClassName: "TalonFX"
+  Construction: "#variable($Name) = new ${ClassName}($CAN_ID);"
+  Import: "import com.ctre.phoenix6.hardware.TalonFX;"
