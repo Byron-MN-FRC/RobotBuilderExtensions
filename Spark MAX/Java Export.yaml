@@ -1,13 +1,10 @@
 Spark MAX:
   Defaults: "Component,None"
-  ClassName: "CANSparkMax"
-  Construction: "#variable($Name) = new ${ClassName}($CAN_ID, MotorType.$MOTOR_TYPE);"
-  Import: "import com.revrobotics.CANSparkMax;\nimport com.revrobotics.CANSparkLowLevel.MotorType;"
-  Extra: >-
-      #if($Restore_Factory_Defaults)#variable($Short_Name).restoreFactoryDefaults();#end
-        
-              #variable($Short_Name).setInverted(${Inverted});
-              #variable($Short_Name).setIdleMode(IdleMode.$Idle_Mode);
-              #variable($Short_Name).burnFlash();
-        
-      
+  ClassName: "SparkMax"
+  Construction: "#variable($Name) = new ${ClassName}($CAN_ID, SparkLowLevel.MotorType.$MOTOR_TYPE);"
+  Import: "import com.revrobotics.spark.SparkBase.PersistMode;\nimport com.revrobotics.spark.SparkBase.ResetMode;\nimport com.revrobotics.spark.config.SparkMaxConfig;\nimport com.revrobotics.spark.SparkMax;\nimport com.revrobotics.spark.config.SparkBaseConfig.IdleMode;\nimport com.revrobotics.spark.SparkLowLevel;"
+  Extra: |
+      SparkMaxConfig NewSparkMaxConfig = new SparkMaxConfig();
+      #variable($Short_Name).configure(NewSparkMaxConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+      NewSparkMaxConfig.inverted(false);
+      NewSparkMaxConfig.idleMode(IdleMode.kCoast);
