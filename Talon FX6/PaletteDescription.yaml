@@ -11,5 +11,5 @@
     - !ChoicesProperty
       name: CAN BUS
       validators: [CANBUS]
-      choices: ["\"CANivore1\"", "\"rio\""]
+      choices: ["\"rio\"", "\"CANivore1\"", "\"CANivore2\""]
       default: "\"rio\""
